@@ -1,4 +1,4 @@
-public class Item {
+public abstract class Item {
     private String name;
     private int weight;
     private int goldValue;
@@ -17,7 +17,10 @@ public class Item {
     public int getGoldValue() {
         return goldValue;
     }
-
-
-
+    public String toString() {
+        return "Name: " + name +
+                "\nWeight: " +
+                weight + "\nPrice: " +
+                goldValue;
+    }
 }

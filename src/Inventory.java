@@ -7,6 +7,10 @@ public class Inventory {
         items = new ArrayList<>();
     }
 
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
     public void addItem(Item item) {
         items.add(item);
     }
@@ -14,7 +18,5 @@ public class Inventory {
         items.remove(item);
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
-    }
+
 }
