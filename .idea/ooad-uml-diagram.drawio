@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:130.0) Gecko/20100101 Firefox/130.0" version="24.7.17">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1272" dy="1894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1060" dy="1773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -13,7 +13,7 @@
         <mxCell id="_3AJ94oyX9AFuhV5-iff-18" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="76qIheIjIqnIHze1jOvI-4">
           <mxGeometry y="60" width="200" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="76qIheIjIqnIHze1jOvI-7" value="&lt;div&gt;&lt;span data-darkreader-inline-color=&quot;&quot; data-darkreader-inline-bgcolor=&quot;&quot; style=&quot;background-color: initial; color: rgb(0, 0, 0); --darkreader-inline-bgcolor: initial; --darkreader-inline-color: #e8e6e3;&quot;&gt;+ getItems(Item): ArrayList&amp;lt;Item&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ addItem(Item): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ removeitem(Item) void&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="76qIheIjIqnIHze1jOvI-4" vertex="1">
+        <mxCell id="76qIheIjIqnIHze1jOvI-7" value="&lt;div&gt;&lt;span data-darkreader-inline-color=&quot;&quot; data-darkreader-inline-bgcolor=&quot;&quot; style=&quot;background-color: initial; color: rgb(0, 0, 0); --darkreader-inline-bgcolor: initial; --darkreader-inline-color: #e8e6e3;&quot;&gt;+ getItems(): ArrayList&amp;lt;Item&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ addItem(Item): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ removeitem(Item) void&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="76qIheIjIqnIHze1jOvI-4" vertex="1">
           <mxGeometry y="68" width="200" height="92" as="geometry" />
         </mxCell>
         <mxCell id="76qIheIjIqnIHze1jOvI-8" value="abstract class &lt;i&gt;Item&lt;/i&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFE599;swimlaneFillColor=#FFE599;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -37,7 +37,7 @@
         <mxCell id="Y_zbtXDFNSpmOWqjWYgW-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673A6;" parent="Y_zbtXDFNSpmOWqjWYgW-4" vertex="1">
           <mxGeometry y="90" width="230" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="Y_zbtXDFNSpmOWqjWYgW-7" value="&lt;div&gt;+ damageMitigation()&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ equip(Player, EquipmentSlot): boolean&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ unequip(Player): void&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="Y_zbtXDFNSpmOWqjWYgW-4" vertex="1">
+        <mxCell id="Y_zbtXDFNSpmOWqjWYgW-7" value="&lt;div&gt;+ damageMitigation(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ equip(Player, EquipmentSlot): boolean&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ unequip(Player): void&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="Y_zbtXDFNSpmOWqjWYgW-4" vertex="1">
           <mxGeometry y="98" width="230" height="62" as="geometry" />
         </mxCell>
         <mxCell id="Y_zbtXDFNSpmOWqjWYgW-8" value="class Consumable" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#E1D5E7;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -139,7 +139,7 @@
         <mxCell id="76qIheIjIqnIHze1jOvI-25" value="" style="line;strokeWidth=1;fillColor=#E1D5E7;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673A6;fillStyle=auto;perimeterSpacing=0;" parent="76qIheIjIqnIHze1jOvI-23" vertex="1">
           <mxGeometry y="90" width="220" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="76qIheIjIqnIHze1jOvI-26" value="&lt;div&gt;+ attack()&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ equip(Player, EquipmentSlot): bolean&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ unequip(Player): void&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="76qIheIjIqnIHze1jOvI-23" vertex="1">
+        <mxCell id="76qIheIjIqnIHze1jOvI-26" value="&lt;div&gt;+ attack(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ equip(Player, EquipmentSlot): bolean&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ unequip(Player): void&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="76qIheIjIqnIHze1jOvI-23" vertex="1">
           <mxGeometry y="98" width="220" height="60" as="geometry" />
         </mxCell>
         <mxCell id="76qIheIjIqnIHze1jOvI-31" value="class Player" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#FFF2CC;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -432,7 +432,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="_3AJ94oyX9AFuhV5-iff-121" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="_3AJ94oyX9AFuhV5-iff-121" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#545454;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="10" y="700" width="1070" height="300" as="geometry" />
         </mxCell>
       </root>
