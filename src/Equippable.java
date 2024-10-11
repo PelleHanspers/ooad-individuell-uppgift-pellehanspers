@@ -1,4 +1,4 @@
 public interface Equippable {
-    public void equip(Player player);
-    public void unequip(Player player);
+    boolean equip(Player player, EquipmentSlot slot);
+    void unequip(Player player);
 }

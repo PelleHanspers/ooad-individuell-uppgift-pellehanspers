@@ -42,10 +42,31 @@ public class PlayerMenu implements Menu {
                             if (input > 0 && input <= items.size()) {
                                 Item itemSelected = items.get(input - 1);
                                 if (itemSelected instanceof Weapon || itemSelected instanceof Armor) {
-                                    ((Equippable) itemSelected).equip(player);
+                                    boolean equipped = false;
+                                    while (!equipped) {
+                                        System.out.println("Where do you want to equip" + itemSelected.getName() + "? (0 to exit)");
+                                        System.out.println("(1) HEAD, (2) TORSO, (3) ARMR, (4) ARML, (5) LEGR, (6) LEGL");
+
+                                        try {
+                                            input = Integer.parseInt(sc.nextLine());
+                                            if (input == 0) {
+                                                System.out.println("Equip action cancelled.");
+                                                break;
+                                            }
+                                            if (input > 0 && input <= EquipmentSlot.values().length) {
+                                                EquipmentSlot slot = EquipmentSlot.values()[input - 1];
+                                                Equippable equippableItem = (Equippable) itemSelected;
+                                                equipped = equippableItem.equip(player, slot);
+                                            } else {
+                                                System.out.println("Please enter a valid slot number.");
+                                            }
+                                        } catch (NumberFormatException e) {
+                                            System.out.println("Please enter a valid number.");
+                                        }
+                                    }
                                     break;
                                 } else if (itemSelected instanceof Consumable) {
-                                    ((Useable) itemSelected).use(player);
+                                    ((Usable) itemSelected).use(player);
                                     break;
                                 }
                             }
@@ -63,7 +84,7 @@ public class PlayerMenu implements Menu {
                         + "\nHP: " + player.getHealthPoints()
                         + "\nMana: " + player.getMana()
                         + "\nGold: " + player.getGold());
-                System.out.println("...press any key to continue");
+                System.out.println(". . . press any key to continue . . .");
                 sc.nextLine();
                 break;
             case 3:

@@ -1,10 +1,11 @@
+import java.util.List;
 
 public class Weapon extends Item implements Equippable {
     private int damageValue;
     DamageType damageType;
-    EquipmentSlot equippableOn;
+    List<EquipmentSlot> equippableOn;
 
-    public Weapon(String name, int weight, int goldValue, int damageValue, DamageType damageType, EquipmentSlot equippableOn) {
+    public Weapon(String name, int weight, int goldValue, int damageValue, DamageType damageType, List<EquipmentSlot> equippableOn) {
         super(name, weight, goldValue);
         this.damageValue = damageValue;
         this.damageType = damageType;
@@ -13,27 +14,35 @@ public class Weapon extends Item implements Equippable {
     public DamageType getDamageType() {
         return damageType;
     }
-    public EquipmentSlot getEquippableOn() {
+    public List<EquipmentSlot> getEquippableOn() {
         return equippableOn;
     }
     public void attack() {
         System.out.println("Attacking with " + this.getName());
     }
     @Override
-    public void equip(Player player) {
-        if (player.getEquippedItems().containsKey(equippableOn)) {
-            System.out.println("A " + player.getEquippedItems().get(equippableOn).getName() + " is already equipped in " + equippableOn);
-            // Add logic to confirm or replace item
+    public boolean equip(Player player, EquipmentSlot slot) {
+        if (this.getEquippableOn().contains(slot)) {
+            return player.equipItem(slot, this);
         } else {
-            player.getEquippedItems().put(equippableOn, this);
-            System.out.println("Equipped " + getName() + " in slot " + equippableOn);
+            System.out.println("Cannot equip " + getName() + " in " + slot);
+            return false;
         }
     }
     @Override
     public void unequip(Player player) {
-        if (player.getEquippedItems().containsKey(equippableOn)) {
-            player.getEquippedItems().remove(equippableOn, this);
-            System.out.println("Unequipping " + getName());
+        EquipmentSlot equippedSlot = null;
+        for (EquipmentSlot slot : this.getEquippableOn()) {
+            if (player.getEquippedItems().containsKey(slot) && player.getEquippedItems().get(slot) == this) {
+                equippedSlot = slot;
+                break;
+            }
+        }
+        if (equippedSlot != null) {
+            player.getEquippedItems().remove(equippedSlot, this);
+            System.out.println("Unequipping " + getName() + " from " + equippedSlot);
+        } else {
+            System.out.println("Item " + getName() + " is not equipped.");
         }
     }
     @Override

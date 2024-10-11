@@ -1,16 +1,20 @@
 public class Shop {
     Inventory inventory;
+    ShopMenu shopMenu;
 
     public Shop() {
         this.inventory = new Inventory();
+        this.shopMenu = new ShopMenu(this);
     }
     public Inventory getInventory() {
         return inventory;
     }
+    public ShopMenu getShopMenu() {
+        return shopMenu;
+    }
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
-
     public void buyItem(Player player, Item item) {
         if (player.getGold() >= item.getGoldValue()) {
             player.addItemToInventory(item);

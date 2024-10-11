@@ -2,13 +2,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ShopMenu implements Menu {
-    private Shop currentShop;
+    private Shop shop;
 
-    public ShopMenu() {
+    public ShopMenu(Shop shop) {
+        this.shop = shop;
     }
-
     public void setShop(Shop shop) {
-        this.currentShop = shop;
+        this.shop = shop;
     }
     public int displayMenuAndGetInput(Scanner sc) {
         System.out.println("Shop Menu:");
@@ -36,14 +36,14 @@ public class ShopMenu implements Menu {
             case 1:
                 System.out.println("All items in shop:");
                 System.out.println("---");
-                currentShop.getInventory().getItems().forEach(item -> System.out.println(item.getName()));
+                shop.getInventory().getItems().forEach(item -> System.out.println(item.getName()));
                 System.out.println(". . . press any key to continue . . .");
                 sc.nextLine();
                 break;
             case 2:
                 System.out.println("All weapons in shop:");
                 System.out.println("---");
-                for (Item item : currentShop.getInventory().getItems()) {
+                for (Item item : shop.getInventory().getItems()) {
                     if (item instanceof Weapon) {
                         System.out.println(item);
                     }
@@ -54,7 +54,7 @@ public class ShopMenu implements Menu {
             case 3:
                 System.out.println("All armor in shop:");
                 System.out.println("---");
-                for (Item item : currentShop.getInventory().getItems()) {
+                for (Item item : shop.getInventory().getItems()) {
                     if (item instanceof Armor) {
                         System.out.println(item);
                         System.out.println("---");
@@ -66,7 +66,7 @@ public class ShopMenu implements Menu {
             case 4:
                 System.out.println("Physical items:");
                 System.out.println("---");
-                for (Item item : currentShop.getInventory().getItems()) {
+                for (Item item : shop.getInventory().getItems()) {
                     if (item instanceof Weapon && ((Weapon) item).getDamageType() == DamageType.PHYSICAL) {
                         System.out.println(item);
                         System.out.println("---");
@@ -81,7 +81,7 @@ public class ShopMenu implements Menu {
             case 5:
                 System.out.println("Magic Items:");
                 System.out.println("---");
-                for (Item item : currentShop.getInventory().getItems()) {
+                for (Item item : shop.getInventory().getItems()) {
                     if (item instanceof Weapon && ((Weapon) item).getDamageType() == DamageType.MAGICAL) {
                         System.out.println(item);
                         System.out.println("---");
@@ -96,7 +96,7 @@ public class ShopMenu implements Menu {
             case 6:
                 System.out.println("Consumables:");
                 System.out.println("---");
-                for (Item item : currentShop.getInventory().getItems()) {
+                for (Item item : shop.getInventory().getItems()) {
                     if (item instanceof Consumable) {
                         System.out.println(item);
                         System.out.println("---");
@@ -107,7 +107,7 @@ public class ShopMenu implements Menu {
                 break;
             case 7:
                 System.out.println("Choose item to buy:");
-                List<Item> items = currentShop.getInventory().getItems();
+                List<Item> items = shop.getInventory().getItems();
                 for (int i = 0; i < items.size(); i++) {
                     System.out.println((i + 1) + "." + items.get(i).getName() + " - " + items.get(i).getGoldValue() + " gold");
                 }
@@ -121,7 +121,7 @@ public class ShopMenu implements Menu {
                     System.out.println("Confirm purchase (y/n):");
                     String response = sc.nextLine();
                     if (response.equals("y")) {
-                        currentShop.buyItem(player, itemSelected);
+                        shop.buyItem(player, itemSelected);
                         System.out.println(". . . press any key to continue . . .");
                         sc.nextLine();
                     } else {
@@ -136,6 +136,7 @@ public class ShopMenu implements Menu {
                 int i = 0;
                 for (Item item : player.inventory.getItems()) {
                     System.out.println((i + 1) + ". " + item.getName() + " - " + item.getGoldValue() + " gold");
+                    i++;
                 }
                 System.out.println("enter number for item to sell:");
                 input = sc.nextInt();
@@ -146,7 +147,7 @@ public class ShopMenu implements Menu {
                     System.out.println("Do you want to sell this item? (y/n):");
                     String response = sc.nextLine();
                     if (response.equals("y")) {
-                        currentShop.sellItem(player, itemSelected);
+                        shop.sellItem(player, itemSelected);
                     } else {
                         System.out.println("Returning to menu");
                         break;

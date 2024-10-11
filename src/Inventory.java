@@ -6,11 +6,9 @@ public class Inventory {
     public Inventory() {
         items = new ArrayList<>();
     }
-
     public ArrayList<Item> getItems() {
         return items;
     }
-
     public void addItem(Item item) {
         items.add(item);
     }

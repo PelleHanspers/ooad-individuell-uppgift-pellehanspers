@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.Map;
+
 
 public class Player {
     private String name;
@@ -43,11 +45,26 @@ public class Player {
     public HashMap<EquipmentSlot, Item> getEquippedItems() {
         return equippedItems;
     }
+    public boolean equipItem(EquipmentSlot slot, Item item) {
+        if (getEquippedItems().containsKey(slot)) {
+            System.out.println("Slot " + slot + " is already occupied by " + getEquippedItems().get(slot).getName());
+            return false;
+        }
+        for (Map.Entry<EquipmentSlot, Item> entry : getEquippedItems().entrySet()) {
+            if (entry.getValue().equals(item)) {
+                System.out.println(item.getName() + " is already equipped in " + entry.getKey());
+                return false;
+            }
+        }
+        getEquippedItems().put(slot, item);
+        System.out.println(item.getName() + " equipped in slot " + slot);
+        return true;
+    }
     public void addItemToInventory(Item item) {
-        inventory.addItem(item);
+        getInventory().addItem(item);
     }
     public void removeItemFromInventory(Item item) {
-        inventory.removeItem(item);
+        getInventory().removeItem(item);
     }
 }
 
